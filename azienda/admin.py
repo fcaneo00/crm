@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import collaboratore, ruolo
+from .models import Collaboratore, Ruolo
 
 # Register your models here.
-admin.site.register(collaboratore)
-admin.site.register(ruolo)
+admin.site.register(Collaboratore)
+admin.site.register(Ruolo)
