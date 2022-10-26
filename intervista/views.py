@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-# from .models import Intervista
+from azienda.models import Collaboratore
 from django.template import loader
 from django.shortcuts import render
 from django.urls import reverse
@@ -21,15 +21,21 @@ def index(request):
 
 def add(request):
     template = loader.get_template('add.html')
-    return HttpResponse(template.render({}, request))
+    collaboratori = Collaboratore.objects.all().values()
+    context = {
+        "collaboratori": collaboratori
+    }
+    return HttpResponse(template.render(context, request))
 
 def addRecord(request):
     cliente = request.POST['nome']
     commento = request.POST['commento']
+    collaboratore = request.POST['collaboratore']
 
     intervista = {
         "cliente": cliente,
         "commento": commento,
+        "collaboratore": collaboratore
     }
 
     collection.insert_one(intervista)

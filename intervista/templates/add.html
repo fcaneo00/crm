@@ -15,6 +15,15 @@
         Commento:<br>
         <input name="commento">
         <br><br>
+        Collaboratore:<br>
+        <select name="collaboratore">
+        {% for collaboratore in collaboratori %}
+            <option value={{ collaboratore.nome }}>
+                {{ collaboratore.nome }}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
         <input type="submit" value="Submit"> 
     </form>
 </body>

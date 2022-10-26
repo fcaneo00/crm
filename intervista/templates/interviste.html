@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Ciao Mondo</h1>
-    {% for x in interviste %}
-        {{x.commento}} di {{x.cliente}} <br>
+    {% for intervista in interviste %}
+        {{intervista.commento}} di {{intervista.cliente}} presso {{intervista.collaboratore}}<br>
     {% endfor %}
     <a href="add/">Aggiungi commento</a>
 </body>
