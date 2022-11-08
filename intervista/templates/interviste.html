@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Ciao Mondo</h1>
-    {% for intervista in interviste %}
-        {{intervista.commento}} di {{intervista.cliente}} presso {{intervista.collaboratore}}<br>
-    {% endfor %}
-    <a href="add/">Aggiungi commento</a>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+<h1>Lista interviste</h1>
+{% endblock %}
+
+{% block content %}
+{% for intervista in interviste %}
+{{intervista.commento}} di {{intervista.cliente}} presso {{intervista.collaboratore}} del {{intervista.data}}<br>
+{% endfor %}
+<button class="btn btn-primary"><a href="add/">Aggiungi commento</a></button>
+{% endblock %}

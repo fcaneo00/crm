@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.http import HttpResponse, HttpResponseRedirect
 from azienda.models import Collaboratore
 from django.template import loader
@@ -10,6 +11,8 @@ db = get_db_handle('crm', 'localhost', 27017, 'mongoadmin', 'mongoadmin')
 collection = get_collection_handle(db, 'intervista')
 
 # Create your views here.
+
+
 def index(request):
     interviste = collection.find()
     template = loader.get_template('interviste.html')
@@ -19,6 +22,7 @@ def index(request):
 
     return HttpResponse(template.render(context, request))
 
+
 def add(request):
     template = loader.get_template('add.html')
     collaboratori = Collaboratore.objects.all().values()
@@ -27,15 +31,20 @@ def add(request):
     }
     return HttpResponse(template.render(context, request))
 
+
 def addRecord(request):
     cliente = request.POST['nome']
     commento = request.POST['commento']
     collaboratore = request.POST['collaboratore']
+    data = datetime.now().date()
+    orario = datetime.now().time()
 
     intervista = {
         "cliente": cliente,
         "commento": commento,
-        "collaboratore": collaboratore
+        "collaboratore": collaboratore,
+        "data": str(data),
+        "orario": str(orario)
     }
 
     collection.insert_one(intervista)
