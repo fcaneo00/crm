@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block headTitle %}
+    Che Maghena SRL
+{% endblock %}
+
+{% block title %}
+    Azienda generica
+{% endblock %}
+
+{% block content %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Codice Fiscale</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Cognome</th>
+            <th scope="col">Indirizzo</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Cellulare</th>
+            <th scope="col">Ruolo ID ???</th>
+            <!-- <th scope="col">Azioni</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for collaboratore in collaboratori %}
+        <tr>
+           <th scope="row">{{ collaboratore.codiceFiscale }}</th>
+           <td>{{ collaboratore.nome }}</td>
+           <td>{{ collaboratore.cognome }}</td>
+           <td>{{ collaboratore.indirizzo }}</td>
+           <td>{{ collaboratore.email }}</td>
+           <td>{{ collaboratore.telefono }}</td>
+           <td>{{ collaboratore.cellulare }}</td>
+           <td>{{ collaboratore.ruolo_id }}</td>
+           <!-- <td>
+            <button class="btn btn-warning">Modifica</button>
+            <button class="btn btn-danger">Cancella</button>
+           </td> -->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<button class="btn btn-success"><a href="add/">Inserisci collaboratore</a></button>
+<button class="btn btn-danger"><a href="/">Torna alla home</a></button>
+{% endblock %}

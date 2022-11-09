@@ -1,12 +1,29 @@
 {% extends "layout.html" %}
 
+{% block headTitle %}
+Lista interviste
+{% endblock %}
+
 {% block title %}
 <h1>Lista interviste</h1>
 {% endblock %}
 
 {% block content %}
-{% for intervista in interviste %}
-{{intervista.commento}} di {{intervista.cliente}} presso {{intervista.collaboratore}} del {{intervista.data}}<br>
-{% endfor %}
-<button class="btn btn-primary"><a href="add/">Aggiungi commento</a></button>
+<div class="card-wrapper" style="display: flex; flex-direction: row;">
+    {% for intervista in interviste %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Intervista di {{ intervista.cliente }}</h5>
+            <p>Effettuata in data {{ intervista.data }}</p>
+            <p>Rilasciata a {{ intervista.collaboratore }}</p>
+            <a href="#" class="btn btn-primary">Apri</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<div class="button-wrapper">
+    <button class="btn btn-success"><a href="add/">Aggiungi commento</a></button>
+    <button class="btn btn-danger"><a href="/">Torna alla home</a></button>
+</div>
 {% endblock %}

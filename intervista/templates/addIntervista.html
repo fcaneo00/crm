@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<h1>Inserisci intervista</h1>
+{% endblock %}
+
+{% block content %}
+<div class="form-wrapper">
+    <form action="addrecord/" method="post">
+        {% csrf_token %}
+        <label class="form-label">Nome*:</label><br>
+        <input required type="text" name="nome">
+        <br><br>
+        <label class="form-label">Commento*:</label><br>
+        <textarea required rows="10" class="form-control" name="commento"></textarea>
+        <br><br>
+        <label class="form-label">Collaboratore*:</label><br>
+        <select required class="form-select" name="collaboratore">
+            {% for collaboratore in collaboratori %}
+            <option value={{ collaboratore.codiceFiscale }}>
+                {{ collaboratore.nome }} - {{ collaboratore.codiceFiscale }}
+            </option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <input class="btn btn-success" type="submit" value="Submit">
+        <button class="btn btn-danger"><a href="../">Torna indietro</a></button>
+    </form>
+</div>
+{% endblock %}

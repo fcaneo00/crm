@@ -1,0 +1,23 @@
+* {
+    padding-inline: 5px;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.welcome-wrapper {
+    margin: auto;
+}

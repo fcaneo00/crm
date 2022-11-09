@@ -12,9 +12,9 @@ collection = get_collection_handle(db, 'intervista')
 
 # Create your views here.
 
-
 def index(request):
     interviste = collection.find()
+    
     template = loader.get_template('interviste.html')
     context = {
         "interviste": interviste
@@ -23,8 +23,8 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def add(request):
-    template = loader.get_template('add.html')
+def formAdd(request):
+    template = loader.get_template('addIntervista.html')
     collaboratori = Collaboratore.objects.all().values()
     context = {
         "collaboratori": collaboratori
