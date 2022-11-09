@@ -21,3 +21,14 @@ a:hover {
 .welcome-wrapper {
     margin: auto;
 }
+
+.select-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.select-link a{
+    color: red;
+    text-decoration: underline;
+    font-size: 12px;
+}

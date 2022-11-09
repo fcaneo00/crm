@@ -30,14 +30,19 @@
         <input required type="text" name="cellulare">
         <br><br>
         <label class="form-label">Ruolo*:</label><br>
-        <select required type="text" name="ruolo">
-            {% for ruolo in ruoli %}
-            <option value={{ ruolo.id }}>
-                {{ ruolo.nome }}
-            </option>
-            {% endfor %}
-        </select>
-        <br><br>
+        <div class="select-wrapper">
+            <select required type="text" name="ruolo">
+                {% for ruolo in ruoli %}
+                <option value={{ ruolo.id }}>
+                    {{ ruolo.nome }}
+                </option>
+                {% endfor %}
+            </select>
+            <div class="select-link">
+                <a href="#">+Aggiungi ruolo</a>
+            </div>
+        </div>
+        <br>
         <input class="btn btn-success" type="submit" value="Submit">
         <button class="btn btn-danger"><a href="../">Torna indietro</a></button>
     </form>
