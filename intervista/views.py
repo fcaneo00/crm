@@ -49,4 +49,4 @@ def addRecord(request):
 
     collection.insert_one(intervista)
 
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse(index))
