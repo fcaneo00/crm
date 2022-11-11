@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<h1>Inserisci collaboratore</h1>
+Inserisci collaboratore
 {% endblock %}
 
 {% block content %}
@@ -47,14 +47,17 @@
                     {% endfor %}
                 </select>
                 <span>
-                    <a href="#">+Aggiungi ruolo</a>
+                    <a href="/admin/azienda/ruolo/">+Aggiungi ruolo</a>
                 </span>
             </div>
         </div>
     </div>
     <div class="flex justify-between pt-2">
-        <input class="cursor-pointer outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm" type="submit" value="Submit">
-        <button class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"><a href="/azienda">Torna indietro</a></button>
+        <input
+            class="cursor-pointer outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm"
+            type="submit" value="Submit">
+        <a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"
+            href="/azienda">Torna indietro</a>
     </div>
 </form>
 {% endblock %}

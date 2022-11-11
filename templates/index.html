@@ -1,18 +1,13 @@
 {% extends "layout.html" %}
-
-{% block headTitle %}
-    Benvenuto
-{% endblock %}
+{% load static %}
 
 {% block title %}
-    <center>Benvenuto</center>
+Benvenuto
 {% endblock %}
 
 {% block content %}
-<div class="welcome-wrapper">
-    <center>
-        <button class="btn btn-primary"><a href="/azienda">Pagina collaboratori</a></button>
-        <button class="btn btn-primary"><a href="/interviste">Pagina interviste clienti</a></button>
-    </center>
-</div>
+<img src="{% static 'img/django-logo.svg' %}" alt="logo-django">
+
+<a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm" href="/azienda">Pagina collaboratori</a>
+<a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm" href="/interviste">Pagina interviste clienti</a>
 {% endblock %}
