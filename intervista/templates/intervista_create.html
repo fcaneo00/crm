@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="form-wrapper">
-    <form action="addrecord/" method="post">
+    <form action="store/" method="post">
         {% csrf_token %}
         <label class="form-label">Nome*:</label><br>
         <input required type="text" name="nome">

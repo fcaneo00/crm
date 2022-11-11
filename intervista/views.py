@@ -14,10 +14,12 @@ collection = get_collection_handle(db, 'intervista')
 
 def index(request):
     interviste = collection.find()
+    count = collection.count_documents({})
     
     template = loader.get_template('intervista_list.html')
     context = {
-        "interviste": interviste
+        "interviste": interviste,
+        "count": count
     }
 
     return HttpResponse(template.render(context, request))

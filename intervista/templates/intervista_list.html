@@ -1,25 +1,22 @@
 {% extends "layout.html" %}
+{% load static %}
 
 {% block title %}
-    Lista interviste
+Lista interviste
 {% endblock %}
 
 {% block content %}
-<div class="card-wrapper" style="display: flex; flex-direction: row;">
+<div class="flex grid grid-cols-4 grid-flow-rows gap-4">
     {% for intervista in interviste %}
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Intervista di {{ intervista.cliente }}</h5>
-            <p>Effettuata in data {{ intervista.data }}</p>
-            <p>Rilasciata a {{ intervista.collaboratore }}</p>
-            <a href="#" class="btn btn-primary">Apri</a>
-        </div>
+    <div>
+        <img src="{% static 'img/django-logo.svg' %}" width="50px" height="50px">
     </div>
     {% endfor %}
 </div>
-<br>
-<div class="button-wrapper">
-    <a href="new/">Aggiungi commento</a>
-    <a href="/">Torna alla home</a>
+<div class="flex justify-between pt-2">
+    <a class="outline-none hover:bg-yellow-300 transition bg-verde rounded p-2 text-black text-sm" href="new/">Aggiungi
+        commento</a>
+    <a class="outline-none hover:bg-yellow-300 transition bg-arancione rounded p-2 text-black text-sm" href="/">Torna
+        alla home</a>
 </div>
 {% endblock %}
