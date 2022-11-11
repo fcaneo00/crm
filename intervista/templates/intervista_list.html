@@ -10,17 +10,24 @@ Lista interviste
     {% for intervista in interviste %}
     <div class="bg-azzurro rounded">
         {{ intervista }}
+        <h1 class="text-lg font-bold">Intervista di {{ intervista.cliente }}</h1>
+        <button
+            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            type="button" data-modal-toggle="intervista-id">
+            Toggle modal
+        </button>
+    </div>
+    <div id="intervista-id" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full"">
+        <p>{{ intervista.commento }}</p>
     </div>
     {% endfor %}
 </div>
 <div class="flex p-2">
-    <div class="flex grow justify-center">
-        <a class="outline-none hover:bg-magenta transition bg-verde rounded p-2 text-black text-sm mx-8"
-            href="new/">Aggiungi
-            commento</a>
-        <a class="outline-none hover:bg-magenta transition bg-arancione rounded p-2 text-black text-sm mx-8"
-            href="/">Torna
-            alla home</a>
+    <div class="flex grow justify-center text-center">
+        <a class="outline-none hover:bg-magenta transition bg-verde rounded p-2 text-black text-sm mx-8 w-36"
+            href="new/">Aggiungi commento</a>
+        <a class="outline-none hover:bg-magenta transition bg-arancione rounded p-2 text-black text-sm mx-8 w-36"
+            href="/">Torna alla home</a>
     </div>
 </div>
 {% endblock %}
