@@ -16,19 +16,19 @@
 
 <body>
     <div class="flex flex-col min-h-screen bg-sfondo justify-between">
-        <nav class="bg-blue-400 text-white py-3 px-2 flex rounded-b-lg">
+        <nav class="bg-blue-400 py-3 px-2 flex rounded-b-lg">
             <span class="p-2">
                 <img src="{% static 'img/django-logo.svg' %}" width="100px" height="100px" alt="logo-django"
                     id="logo-navbar">
                 <a href="/" class="flex-row text-blue-900 font-bold">CRM Azienda</a>
                 <span class="pl-2 flex-row"><a href="/admin" class="mr-4 hover:underline text-xs ">Admin</a></span>
             </span>
-            <ul class="flex flex-wrap items-center mt-3 text-white mt-0 ml-auto">
+            <ul class="flex text-white flex-wrap items-center mt-3 mt-0 ml-auto">
                 <li><a href="/azienda" class="mr-4 hover:underline">Collaboratori</a></li>
                 <li><a href="/interviste" class="mr-4 hover:underline">Interviste</a></li>
             </ul>
         </nav>
-        <div class="flex-1 mx-auto max-w-xl w-full pt-5">
+        <div class="flex-1 w-full pt-5">
             {% block content %} {% endblock %}
         </div>
     </div>
@@ -36,18 +36,18 @@
 
 <script>
     tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            arancione: '#ff6600',
-            magenta: '#ff0066',
-            azzurro: '#33ccff',
-            blu: '#6699ff',
-            sfondo: '#041f30',
-            verde: '#66ff33'
-          }
+        theme: {
+            extend: {
+                colors: {
+                    sfondo: '#041f30',
+                    arancione: '#ff6600',
+                    magenta: '#ff0066',
+                    azzurro: '#33ccff',
+                    blu: '#6699ff',
+                    verde: '#66ff33'
+                }
+            }
         }
-      }
     }
 </script>
 
