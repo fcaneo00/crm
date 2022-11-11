@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 def index(request):
     collaboratori = Collaboratore.objects.all().values()
 
-    template = loader.get_template('list.html')
+    template = loader.get_template('azienda_list.html')
     context = {
         "collaboratori": collaboratori,
     }
@@ -17,7 +17,7 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def create(request):
-    template = loader.get_template('create.html')
+    template = loader.get_template('azienda_create.html')
     ruoli = Ruolo.objects.all().values()
     context = {
         "ruoli": ruoli
