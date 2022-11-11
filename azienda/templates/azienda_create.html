@@ -9,35 +9,35 @@
     {% csrf_token %}
     <div class="flex flex-col pt-5">
         <div class="flex flex-col">
-            <label class="" style="font-weight: bold;">Codice Fiscale*:</label><br>
+            <label class="text-white font-bold">Codice Fiscale*:</label><br>
             <input required type="text" name="codiceFiscale">
         </div>
         <div class="flex flex-col">
-            <label class="">Nome:</label><br>
+            <label class="text-white">Nome:</label><br>
             <input required type="text" name="nome">
         </div>
         <div class="flex flex-col">
-            <label class="">Cognome:</label><br>
+            <label class="text-white">Cognome:</label><br>
             <input required type="text" name="cognome">
         </div>
         <div class="flex flex-col">
-            <label class="">Indirizzo:</label><br>
+            <label class="text-white">Indirizzo:</label><br>
             <input required type="text" name="indirizzo">
         </div>
         <div class="flex flex-col">
-            <label class="">Email:</label><br>
+            <label class="text-white">Email:</label><br>
             <input required type="email" name="email">
         </div>
         <div class="flex flex-col">
-            <label class="">Telefono:</label><br>
+            <label class="text-white">Telefono:</label><br>
             <input required type="text" name="telefono">
         </div>
         <div class="flex flex-col">
-            <label class="">Cellulare:</label><br>
+            <label class="text-white">Cellulare:</label><br>
             <input required type="text" name="cellulare">
         </div>
         <div class="flex flex-col">
-            <label class="">Ruolo:</label><br>
+            <label class="text-white">Ruolo:</label><br>
             <div class="flex">
                 <select required type="text" name="ruolo">
                     {% for ruolo in ruoli %}
@@ -55,7 +55,7 @@
     <div class="flex justify-between pt-2">
         <input
             class="cursor-pointer outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm"
-            type="submit" value="Submit">
+            type="submit" value="Crea">
         <a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"
             href="/azienda">Torna indietro</a>
     </div>
