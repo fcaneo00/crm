@@ -15,7 +15,7 @@ collection = get_collection_handle(db, 'intervista')
 def index(request):
     interviste = collection.find()
     
-    template = loader.get_template('interviste.html')
+    template = loader.get_template('list.html')
     context = {
         "interviste": interviste
     }
@@ -24,7 +24,7 @@ def index(request):
 
 
 def formAdd(request):
-    template = loader.get_template('addIntervista.html')
+    template = loader.get_template('create.html')
     collaboratori = Collaboratore.objects.all().values()
     context = {
         "collaboratori": collaboratori
