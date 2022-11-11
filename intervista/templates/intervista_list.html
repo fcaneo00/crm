@@ -1,11 +1,7 @@
 {% extends "layout.html" %}
 
-{% block headTitle %}
-Lista interviste
-{% endblock %}
-
 {% block title %}
-<h1>Lista interviste</h1>
+    Lista interviste
 {% endblock %}
 
 {% block content %}
@@ -23,7 +19,7 @@ Lista interviste
 </div>
 <br>
 <div class="button-wrapper">
-    <button class="btn btn-success"><a href="add/">Aggiungi commento</a></button>
-    <button class="btn btn-danger"><a href="/">Torna alla home</a></button>
+    <a href="new/">Aggiungi commento</a>
+    <a href="/">Torna alla home</a>
 </div>
 {% endblock %}

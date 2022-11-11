@@ -8,14 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link rel="stylesheet" type="text/tailwindcss" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="flex flex-col min-h-screen bg-blue-100 justify-between">
+    <div class="flex flex-col min-h-screen bg-sfondo justify-between">
         <nav class="bg-blue-400 text-white py-3 px-2 flex rounded-b-lg">
             <span class="p-2">
-                <img src="{% static 'img/django-logo.svg' %}" width="100px" height="100px" alt="logo-django" id="logo-navbar">
+                <img src="{% static 'img/django-logo.svg' %}" width="100px" height="100px" alt="logo-django"
+                    id="logo-navbar">
                 <a href="/" class="flex-row text-blue-900 font-bold">CRM Azienda</a>
                 <span class="pl-2 flex-row"><a href="/admin" class="mr-4 hover:underline text-xs ">Admin</a></span>
             </span>
@@ -26,8 +30,25 @@
         </nav>
         <div class="flex-1 mx-auto max-w-xl w-full pt-5">
             {% block content %} {% endblock %}
-        </div>f
+        </div>
     </div>
 </body>
+
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            arancione: '#ff6600',
+            magenta: '#ff0066',
+            azzurro: '#33ccff',
+            blu: '#6699ff',
+            sfondo: '#041f30',
+            verde: '#66ff33'
+          }
+        }
+      }
+    }
+</script>
 
 </html>
