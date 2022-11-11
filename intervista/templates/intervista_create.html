@@ -1,30 +1,40 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Inserisci intervista
+Inserisci intervista
 {% endblock %}
 
 {% block content %}
-<div class="form-wrapper">
-    <form action="store/" method="post">
-        {% csrf_token %}
-        <label class="form-label">Nome*:</label><br>
-        <input required type="text" name="nome">
-        <br><br>
-        <label class="form-label">Commento*:</label><br>
-        <textarea required rows="10" class="form-control" name="commento"></textarea>
-        <br><br>
-        <label class="form-label">Collaboratore*:</label><br>
-        <select required class="form-select" name="collaboratore">
-            {% for collaboratore in collaboratori %}
-            <option value={{ collaboratore.codiceFiscale }}>
-                {{ collaboratore.nome }} - {{ collaboratore.codiceFiscale }}
-            </option>
-            {% endfor %}
-        </select>
-        <br><br>
-        <input class="btn btn-success" type="submit" value="Submit">
-        <button class="btn btn-danger"><a href="../">Torna indietro</a></button>
-    </form>
-</div>
+<form action="store/" method="post">
+    {% csrf_token %}
+    <div class="flex flex-col pt-5">
+        <div class="flex flex-col">
+            <label class="text-white">Nome:</label><br>
+            <input required type="text" name="codiceFiscale">
+        </div>
+        <div class="flex flex-col">
+            <label class="text-white">Commento:</label><br>
+            <textarea required type="text" name="codiceFiscale"></textarea>
+        </div>
+        <div class="flex flex-col">
+            <label class="text-white">Ruolo:</label><br>
+            <div class="flex">
+                <select required type="text" name="ruolo">
+                    {% for collaboratore in collaboratori %}
+                    <option value={{ collaboratore.codiceFiscale }}>
+                        {{ collaboratore.nome }} - {{ collaboratore.codiceFiscale }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between pt-2">
+        <input
+            class="cursor-pointer outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm"
+            type="submit" value="Submit">
+        <a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"
+            href="/azienda">Torna indietro</a>
+    </div>
+</form>
 {% endblock %}
