@@ -8,22 +8,22 @@ from django.http import HttpResponseRedirect, HttpResponse
 def index(request):
     collaboratori = Collaboratore.objects.all().values()
 
-    template = loader.get_template('collaboratori.html')
+    template = loader.get_template('list.html')
     context = {
         "collaboratori": collaboratori,
     }
 
     return HttpResponse(template.render(context, request))
 
-def formAdd(request):
-    template = loader.get_template('addCollaboratore.html')
+def create(request):
+    template = loader.get_template('create.html')
     ruoli = Ruolo.objects.all().values()
     context = {
         "ruoli": ruoli
     }
     return HttpResponse(template.render(context, request))
 
-def addRecord(request):
+def store(request):
 
     collaboratore = Collaboratore(
         codiceFiscale = request.POST['codiceFiscale'],

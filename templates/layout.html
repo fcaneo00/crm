@@ -6,16 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block headTitle %}{% endblock headTitle %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <link rel="stylesheet" href="{% static 'app.css' %}">
 </head>
 <body>
-    <div id="title">
-        <h1>{% block title %} {% endblock %}</h1>
-    </div>
-
-    <div id="content">
-        {% block content %} {% endblock %}
+    <div class="flex flex-col min-h-screen bg-blue-100 justify-between">
+        <nav class="bg-blue-400 text-white py-3 px-2 flex">
+            <span><a href="#" class="text-blue-900 font-bold">CRM Azienda</a></span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm text-white mt-0 ml-auto">
+                <li><a href="/azienda" class="mr-4 hover:underline">Collaboratori</a></li>
+                <li><a href="/interviste" class="mr-4 hover:underline">Interviste</a></li>
+            </ul>
+        </nav>
+        <div class="flex-1 mx-auto max-w-xl w-full">
+            {% block content %} {% endblock %}
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<h1>Inserisci collaboratore</h1>
+{% endblock %}
+
+{% block content %}
+<form action="store/" method="post">
+    {% csrf_token %}
+    <div class="flex flex-col pt-5">
+        <div class="flex flex-col">
+            <label class="" style="font-weight: bold;">Codice Fiscale*:</label><br>
+            <input required type="text" name="codiceFiscale">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Nome:</label><br>
+            <input required type="text" name="nome">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Cognome:</label><br>
+            <input required type="text" name="cognome">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Indirizzo:</label><br>
+            <input required type="text" name="indirizzo">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Email:</label><br>
+            <input required type="email" name="email">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Telefono:</label><br>
+            <input required type="text" name="telefono">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Cellulare:</label><br>
+            <input required type="text" name="cellulare">
+        </div>
+        <div class="flex flex-col">
+            <label class="">Ruolo:</label><br>
+            <div class="flex">
+                <select required type="text" name="ruolo">
+                    {% for ruolo in ruoli %}
+                    <option value={{ ruolo.id }}>
+                        {{ ruolo.nome }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <span>
+                    <a href="#">+Aggiungi ruolo</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-between pt-2">
+        <input class="btn btn-success" type="submit" value="Submit">
+        <button class="btn btn-danger"><a href="/azienda">Torna indietro</a></button>
+    </div>
+</form>
+{% endblock %}
