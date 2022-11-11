@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block headTitle %}{% endblock headTitle %}</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
-    <link rel="stylesheet" href="{% static 'app.css' %}">
+    <link rel="stylesheet" type="text/tailwindcss" href="{% static 'app.css' %}">
 </head>
 <body>
     <div class="flex flex-col min-h-screen bg-blue-100 justify-between">

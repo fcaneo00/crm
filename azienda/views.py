@@ -1,5 +1,6 @@
 from .models import Collaboratore, Ruolo
 from django.shortcuts import render
+from django.contrib.auth import authenticate
 from django.template import loader
 from django.urls import reverse
 from django.http import HttpResponseRedirect, HttpResponse
@@ -24,7 +25,6 @@ def create(request):
     return HttpResponse(template.render(context, request))
 
 def store(request):
-
     collaboratore = Collaboratore(
         codiceFiscale = request.POST['codiceFiscale'],
         nome = request.POST['nome'],
