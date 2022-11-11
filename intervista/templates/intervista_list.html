@@ -6,17 +6,21 @@ Lista interviste
 {% endblock %}
 
 {% block content %}
-<div class="flex grid grid-cols-4 grid-flow-rows gap-4">
+<div class="flex flex-1 grid grid-cols-4 grid-flow-rows gap-4 px-2">
     {% for intervista in interviste %}
-    <div>
-        <img src="{% static 'img/django-logo.svg' %}" width="50px" height="50px">
+    <div class="bg-azzurro rounded">
+        {{ intervista }}
     </div>
     {% endfor %}
 </div>
-<div class="flex justify-between pt-2">
-    <a class="outline-none hover:bg-yellow-300 transition bg-verde rounded p-2 text-black text-sm" href="new/">Aggiungi
-        commento</a>
-    <a class="outline-none hover:bg-yellow-300 transition bg-arancione rounded p-2 text-black text-sm" href="/">Torna
-        alla home</a>
+<div class="flex p-2">
+    <div class="flex grow justify-center">
+        <a class="outline-none hover:bg-magenta transition bg-verde rounded p-2 text-black text-sm mx-8"
+            href="new/">Aggiungi
+            commento</a>
+        <a class="outline-none hover:bg-magenta transition bg-arancione rounded p-2 text-black text-sm mx-8"
+            href="/">Torna
+            alla home</a>
+    </div>
 </div>
 {% endblock %}
