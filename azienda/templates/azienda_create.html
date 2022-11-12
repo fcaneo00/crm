@@ -8,9 +8,12 @@
 <form action="store/" method="post">
     {% csrf_token %}
     <div class="flex flex-col pt-5">
-        <div class="flex flex-col">
-            <label class="" style="font-weight: bold;">Codice Fiscale*:</label><br>
-            <input required type="text" name="codiceFiscale">
+        <div class="pt-5">
+            <label class="text-gray-300 font-bold">Codice Fiscale*:</label><br>
+            <input
+            placeholder="Codice fiscale"
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            required type="text" name="codiceFiscale">
         </div>
         <div class="pt-5">
             <label class="text-gray-300">Nome:</label><br>
