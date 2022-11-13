@@ -6,3 +6,10 @@ La nostra prima app Django. [@fcaneo00](https://github.com/fcaneo00) [@tommasoba
 [Presentazione Power Point](https://docs.google.com/presentation/d/1rdt_5IYaZQJ_uzQDy8SXW89DwjszJdi3UimQRsgPzQ4/edit?usp=sharing)
 
 ## PALETTE COLORI
+
+- Sfondo: '#041f30',
+- Arancione: '#ff6600',
+- Magenta: '#ff0066',
+- Azzurro: '#33ccff',
+- Blu: '#6699ff',
+- Verde: '#66ff33'
