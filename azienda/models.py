@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Ruolo(models.Model):
-    nome = models.CharField(max_length = 50)
+    nome = models.CharField(max_length = 50, unique=True)
     
     def __str__(self):
        return self.nome
@@ -16,7 +16,7 @@ class Collaboratore(models.Model):
     email = models.EmailField()
     telefono = models.CharField(max_length = 50)
     cellulare = models.CharField(max_length = 50)
-    ruolo = models.ForeignKey(Ruolo, on_delete = models.CASCADE)
+    ruolo = models.ForeignKey(Ruolo, on_delete = models.CASCADE, to_field='nome')
 
     def __str__(self):
         return self.nome + " " + self.cognome
