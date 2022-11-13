@@ -9,13 +9,14 @@ Lista interviste
 {% block content %}
 <div class="flex flex-1 grid grid-cols-4 grid-flow-rows gap-4 px-2">
     {% for intervista in interviste %}
-    <div class="bg-azzurro rounded">
-        <h1 class="text-lg font-bold">Intervista di {{ intervista.cliente }} in data {{ intervista.data }}</h1>
-        <button
-            class="outline-none hover:bg-magenta transition bg-blu rounded p-2 text-black text-sm w-36"
-            type="button" data-modal-toggle="intervista-{{ intervista|mongo_id }}">
-            Apri dettaglio
-        </button>
+    <div class="text-gray-800 pt-3 rounded font-bold bg-blu mx-5">
+        <div class="mx-5">
+            <h1 class="text-lg font-bold">Intervista di {{ intervista.cliente }} in data {{ intervista.data }}</h1>
+            <button class="outline-none hover:bg-magenta transition bg-blu rounded p-2 text-black text-sm w-36"
+                type="button" data-modal-toggle="intervista-{{ intervista|mongo_id }}">
+                Apri dettaglio
+            </button>
+        </div>
     </div>
     <div id="intervista-{{ intervista|mongo_id }}" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
