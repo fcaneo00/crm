@@ -7,57 +7,72 @@
 {% block content %}
 <form action="store/" method="post">
     {% csrf_token %}
-    <div class="flex flex-col pt-5">
-        <div class="flex flex-col">
-            <label class="" style="font-weight: bold;">Codice Fiscale*:</label><br>
-            <input required type="text" name="codiceFiscale">
+    <div class="flex flex-col max-w-screen mx-auto items-center pt-5">
+        <div class="pt-5">
+            <label class="text-gray-300 font-bold">Codice Fiscale*:</label><br>
+            <input
+            placeholder="Codice fiscale"
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            required type="text" name="codiceFiscale">
         </div>
-        <div class="flex flex-col">
-            <label class="">Nome:</label><br>
-            <input required type="text" name="nome">
+        <div class="pt-5">
+            <label class="text-gray-300">Nome:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="Nome" required type="text" name="nome">
         </div>
-        <div class="flex flex-col">
-            <label class="">Cognome:</label><br>
-            <input required type="text" name="cognome">
+        <div class="pt-5">
+            <label class="text-gray-300">Cognome:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="Cognome" required type="text" name="cognome">
         </div>
-        <div class="flex flex-col">
-            <label class="">Indirizzo:</label><br>
-            <input required type="text" name="indirizzo">
+        <div class="pt-5">
+            <label class="text-gray-300">Indirizzo:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="Indirizzo" required type="text" name="indirizzo">
         </div>
-        <div class="flex flex-col">
-            <label class="">Email:</label><br>
-            <input required type="email" name="email">
+        <div class="pt-5">
+            <label class="text-gray-300">Email:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="nomecognome@gmail.com" required type="email" name="email">
         </div>
-        <div class="flex flex-col">
-            <label class="">Telefono:</label><br>
-            <input required type="text" name="telefono">
+        <div class="pt-5">
+            <label class="text-gray-300">Telefono:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="Telefono" required type="text" name="telefono">
         </div>
-        <div class="flex flex-col">
-            <label class="">Cellulare:</label><br>
-            <input required type="text" name="cellulare">
+        <div class="pt-5">
+            <label class="text-gray-300">Cellulare:</label><br>
+            <input
+            class="border-2 p-3 px-4 rounded bg-white flex-grow mr-5"
+            placeholder="Cellulare" required type="text" name="cellulare">
         </div>
-        <div class="flex flex-col">
-            <label class="">Ruolo:</label><br>
-            <div class="flex">
-                <select required type="text" name="ruolo">
+        <div class="pt-5">
+            <label class="text-gray-300">Ruolo:</label><br>
+            <div>
+                <select class="w-32" required type="text" name="ruolo">
                     {% for ruolo in ruoli %}
                     <option value={{ ruolo.id }}>
                         {{ ruolo.nome }}
                     </option>
                     {% endfor %}
                 </select>
-                <span>
-                    <a href="/admin/azienda/ruolo/">+Aggiungi ruolo</a>
-                </span>
+                <button class="transition ml-2 duration-300 text-gray-300 bg-blue-400 p-2 rounded hover:bg-blue-800">
+                    <a href="/admin/azienda/ruolo/">Aggiungi ruolo</a>
+                </button>
             </div>
         </div>
-    </div>
-    <div class="flex justify-between pt-2">
-        <input
-            class="cursor-pointer outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm"
-            type="submit" value="Submit">
-        <a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"
-            href="/azienda">Torna indietro</a>
+        <div class="flex justify-between pt-5">
+            <input
+                class="cursor-pointer mr-10 outline-none hover:bg-green-300 transition bg-green-400 rounded p-2 text-white text-sm"
+                type="submit" value="Submit">
+            <a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm"
+                href="/azienda">Torna indietro</a>
+        </div>
     </div>
 </form>
 {% endblock %}

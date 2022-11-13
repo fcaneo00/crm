@@ -9,40 +9,45 @@
 {% endblock %}
 
 {% block content %}
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Codice Fiscale</th>
-            <th scope="col">Nome</th>
-            <th scope="col">Cognome</th>
-            <th scope="col">Indirizzo</th>
-            <th scope="col">Email</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Cellulare</th>
-            <th scope="col">Ruolo ID ???</th>
-            <!-- <th scope="col">Azioni</th> -->
-        </tr>
-    </thead>
-    <tbody>
+<div class="">
+    <div class="row text-gray-800 pt-3 rounded-t-md font-bold bg-blue-100 mx-5">
+        <div class="col-2 m-auto">Codice Fiscale</div>
+        <div class="col-1 m-auto">Nome</div>
+        <div class="col-1 m-auto">Cognome</div>
+        <div class="col-1 m-auto">Indirizzo</div>
+        <div class="col-2 m-auto">Email</div>
+        <div class="col-1 m-auto">Telefono</div>
+        <div class="col-1 m-auto">Cellulare</div>
+        <div class="col-1 m-auto">Ruolo ID</div>
+        <!-- <div scope="col">Azioni</div> -->
+    </div>
+    
         {% for collaboratore in collaboratori %}
-        <tr>
-           <th scope="row">{{ collaboratore.codiceFiscale }}</th>
-           <td>{{ collaboratore.nome }}</td>
-           <td>{{ collaboratore.cognome }}</td>
-           <td>{{ collaboratore.indirizzo }}</td>
-           <td>{{ collaboratore.email }}</td>
-           <td>{{ collaboratore.telefono }}</td>
-           <td>{{ collaboratore.cellulare }}</td>
-           <td>{{ collaboratore.ruolo_id }}</td>
-           <!-- <td>
+        <div class="row text-gray-800 bg-blue-100 mx-5">
+            <div class="col-2 m-auto">{{ collaboratore.codiceFiscale }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.nome }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.cognome }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.indirizzo }}</div>
+            <div class="col-2 m-auto">{{ collaboratore.email }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.telefono }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.cellulare }}</div>
+            <div class="col-1 m-auto">{{ collaboratore.ruolo_id }}</div>
+           <!-- <div>
             <button class="button">Modifica</button>
             <button class="button">Cancella</button>
-           </td> -->
-        </tr>
+           </div> -->
+        </div>
         {% endfor %}
-    </tbody>
-</table>
-<br>
-<button class="button"><a href="new/">Inserisci collaboratore</a></button>
-<button class="button"><a href="/">Torna alla home</a></button>
+    
+        <div class="mx-5 bg-blue-100 rounded-b-md text-gray-300">
+            <a href="new/">
+                <button class="rounded transition duration-300 button p-2 m-3 bg-blue-400 hover:bg-blue-800"
+                >Inserisci collaboratore</button>
+            </a>
+            <a href="/">
+                <button class="rounded transition duration-300 button p-2 bg-blue-400 hover:bg-blue-800"
+                >Torna alla home</button>
+            </a>
+        </div>
+</div>
 {% endblock %}
