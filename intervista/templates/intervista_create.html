@@ -10,16 +10,16 @@ Inserisci intervista
     <div class="flex flex-col max-w-screen mx-auto items-center pt-5">
         <div class="pt-5">
             <label class="text-white">Nome:</label><br>
-            <input required type="text" name="codiceFiscale">
+            <input required type="text" name="cliente">
         </div>
         <div class="pt-5">
             <label class="text-white">Commento:</label><br>
-            <textarea required type="text" name="codiceFiscale"></textarea>
+            <textarea required type="text" name="commento"></textarea>
         </div>
         <div class="pt-5">
             <label class="text-white">Ruolo:</label><br>
             <div class="flex">
-                <select required type="text" name="ruolo">
+                <select required type="text" name="collaboratore">
                     {% for collaboratore in collaboratori %}
                     <option value={{ collaboratore.codiceFiscale }}>
                         {{ collaboratore.nome }} - {{ collaboratore.codiceFiscale }}

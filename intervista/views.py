@@ -35,7 +35,7 @@ def create(request):
 
 
 def store(request):
-    cliente = request.POST['nome']
+    cliente = request.POST['cliente']
     commento = request.POST['commento']
     collaboratore = request.POST['collaboratore']
     data = datetime.now().date()
