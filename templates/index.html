@@ -6,8 +6,8 @@ Benvenuto
 {% endblock %}
 
 {% block content %}
-<img src="{% static 'img/django-logo.svg' %}" alt="logo-django">
+<div class="flex flex-col max-w-screen mx-auto items-center">
+    <img src="{% static 'img/django-logo.svg' %}" alt="Logo di Django" class="filter-white" height="250px" width="500px">
+</div>
 
-<a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm" href="/azienda">Pagina collaboratori</a>
-<a class="outline-none hover:bg-yellow-300 transition bg-yellow-400 rounded p-2 text-black text-sm" href="/interviste">Pagina interviste clienti</a>
 {% endblock %}
