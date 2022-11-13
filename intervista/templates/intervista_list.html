@@ -9,10 +9,10 @@ Lista interviste
 {% block content %}
 <div class="flex flex-1 grid grid-cols-4 grid-flow-rows gap-4 px-2">
     {% for intervista in interviste %}
-    <div class="text-gray-800 pt-3 rounded font-bold bg-blu mx-5">
-        <div class="mx-5">
+    <div class="text-gray-800 pt-3 rounded font-bold bg-blue-100 mx-5">
+        <div class="mx-2">
             <h1 class="text-lg font-bold">Intervista di {{ intervista.cliente }} in data {{ intervista.data }}</h1>
-            <button class="outline-none hover:bg-magenta transition bg-blu rounded p-2 text-black text-sm w-36"
+            <button class="rounded transition duration-300 button p-2 my-2 bg-blue-400 hover:bg-blue-800"
                 type="button" data-modal-toggle="intervista-{{ intervista|mongo_id }}">
                 Apri dettaglio
             </button>
@@ -20,7 +20,7 @@ Lista interviste
     </div>
     <div id="intervista-{{ intervista|mongo_id }}" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-        <div class="bg-blu relative p-4 w-full max-w-2xl h-full md:h-auto rounded">
+        <div class="bg-blue-100 relative p-4 w-full max-w-2xl h-full md:h-auto rounded">
             <div class="p-6 space-y-6">
                 <h1 class="text-lg font-bold">{{ intervista.cliente }}</h1>
                 <p class="leading-relaxed">
@@ -29,7 +29,7 @@ Lista interviste
             </div>
             <div class="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                 <button data-modal-toggle="intervista-{{ intervista|mongo_id }}" type="button"
-                    class="outline-none hover:bg-magenta transition bg-blu rounded p-2 text-black text-sm w-36">Chiudi</button>
+                    class="rounded transition duration-300 button p-2 m-3 bg-blue-400 hover:bg-blue-800">Chiudi</button>
             </div>
         </div>
     </div>
@@ -37,9 +37,9 @@ Lista interviste
 </div>
 <div class="flex p-2">
     <div class="flex grow justify-center text-center">
-        <a class="outline-none hover:bg-magenta transition bg-verde rounded p-2 text-black text-sm mx-8 w-36"
+        <a class="rounded transition duration-300 button p-2 m-8 bg-blue-400 hover:bg-blue-800"
             href="new/">Aggiungi commento</a>
-        <a class="outline-none hover:bg-magenta transition bg-arancione rounded p-2 text-black text-sm mx-8 w-36"
+        <a class="rounded transition duration-300 button p-2 m-8 bg-blue-400 hover:bg-blue-800"
             href="/">Torna alla home</a>
     </div>
 </div>
