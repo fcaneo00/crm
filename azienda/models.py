@@ -16,7 +16,7 @@ class Collaboratore(models.Model):
     email = models.EmailField()
     telefono = models.CharField(max_length = 50)
     cellulare = models.CharField(max_length = 50)
-    ruolo = models.ForeignKey(Ruolo, on_delete = models.CASCADE, to_field='nome')
+    ruolo = models.ForeignKey(Ruolo, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.nome + " " + self.cognome

@@ -8,10 +8,12 @@ from django.http import HttpResponseRedirect, HttpResponse
 # Create your views here.
 def index(request):
     collaboratori = Collaboratore.objects.all().values()
+    ruoli = Ruolo.objects.all().values()
 
     template = loader.get_template('azienda_list.html')
     context = {
         "collaboratori": collaboratori,
+        "ruoli": ruoli
     }
 
     return HttpResponse(template.render(context, request))
